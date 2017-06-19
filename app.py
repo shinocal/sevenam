@@ -44,7 +44,7 @@ def index():
       p.line(x, var, legend="Temp.", line_width=2)
   
       script, div = components(p)       
-      return render_template('index.html', script=script, div=div)
+      return render_template('display.html', script=script, div=div)
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0')
