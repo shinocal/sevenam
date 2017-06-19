@@ -42,9 +42,9 @@ def index():
         var.append(closing_price[n])
         var2.append(dates[n])
 
-      #x=range(1,len(closing_price))
+      x=range(1,len(closing_price))
       p = figure(x_axis_type="datetime",title="closing price", x_axis_label='x', y_axis_label='y')
-      p.line(var2, var, legend="Clos. Price", line_width=2)
+      p.line(x, var, legend="Clos. Price", line_width=2)
 
       script, div = components(p)       
       return render_template('display.html', script=script, div=div)
