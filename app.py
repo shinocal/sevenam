@@ -43,7 +43,7 @@ def index():
       #x=range(1,len(closing_price))
       p = figure(title="closing price", x_axis_label='x', y_axis_label='y')
       p.line(dates, var, legend="Clos. Price", line_width=2)
-      save(p,filename="/templates/display.html")
+
       script, div = components(p)       
       return render_template('display.html', script=script, div=div)
       
