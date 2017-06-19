@@ -21,13 +21,10 @@ def index():
     else:
       i=datetime.datetime.now()
 
-      startdate='%s%s%s' % (i.year,i.month-1,i.day)
-      enddate='%s%s%s' % (i.year,i.month,i.day)
       user_input=request.form['tkr']
 
-      if len(str(i.month))==1:
-        startdate='%s%s%s%s' % (i.year,0,i.month-1,i.day)
-        enddate='%s%s%s%s' % (i.year,0,i.month,i.day)
+      startdate='%s%s%s%s' % (i.year,0,i.month-1,i.day)
+      enddate='%s%s%s%s' % (i.year,0,i.month,i.day)
 
       api_url='https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?date.gte=%s&date.lt=%s&ticker=%s&api_key=MUSMX7hgtssoAwLpwFnb' % (startdate,enddate,user_input) 
 
