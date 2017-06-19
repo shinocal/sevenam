@@ -9,11 +9,7 @@ from bokeh.embed import components
 
 app = Flask(__name__)
 
-@app.route('/')
-def main():
-  return redirect('/index')
-
-@app.route('/index')
+@app.route('/index', methods=['GET','POST'])
 def index():
 
     if request.method == 'GET':
@@ -45,6 +41,12 @@ def index():
       save(p,filename="/templates/display.html")
       script, div = components(p)       
       return render_template('display.html', script=script, div=div)
-
+      
+      
+@app.route('/', methods=['GET','POST'])
+def main():
+  return redirect('/index')
+  
+  
 if __name__ == '__main__':
   app.run(host='0.0.0.0')
