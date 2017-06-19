@@ -1,0 +1,23 @@
+<title>Your Stock</title>
+<div class=page>
+    <head> 
+        <link href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.6.min.css" rel="stylesheet" type="text/css">
+        <link href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.6.min.css" rel="stylesheet" type="text/css">
+
+        <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.6.min.js"></script>
+        <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.6.min.js"></script>
+    </head>
+
+    
+    <body>
+
+    <h1>
+      Time series of recent closing prices for {{ tkr }}
+    </h1>
+      <input type='text' name='tkr' /> <input type='submit' value='Submit' />
+    </form>
+      {{script|safe}}
+      {{div|safe}}
+    </body>
+
+  </div>
